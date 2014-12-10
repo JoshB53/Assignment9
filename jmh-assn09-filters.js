@@ -4,7 +4,7 @@
  * Date: 12/8/2014
  * File: jmh-assn09-filters.js 
  *  
- *  Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
+ *  Borrowed code from Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
  *  Copyright (c) 2014 by Jesse M. Heines.  All rights reserved.  May be freely 
  *    copied or excerpted for educational purposes with credit to the author.
  *  updated by JMH on November 28, 2014 at 9:18 AM
