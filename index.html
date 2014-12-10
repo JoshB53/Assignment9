@@ -9,7 +9,6 @@
   - Date: 12/8/2014
   - File: index.html
 
-
   Most of the code was  borrowed from Jesse M. Heines, UMass Lowell Computer Science,
   Copyright (c) 2014 by Jesse M. Heines.  All rights reserved.  May be freely 
     copied or excerpted for educational purposes with credit to the author.
@@ -83,14 +82,15 @@
               // true to sort in descending order, false to sort in ascending order
               // will be false if sorting a new column or last sort was descending
           if ( colNo === 2 ) {
-            // this is the Student Name column
             $scope.sortField = "name" ; //CHANGE// Changed 12/9
           } else if ( colNo === 3 ) {
-            $scope.sortField = "balance" ; //CHANGE// Changed 12/9
+              $scope.sortField = "balance" ; //CHANGE// Changed 12/9
           } else if ( colNo === 4 ) {
-            $scope.sortField = "company" ; //CHANGE// Changed 12/9
+              $scope.sortField = "company" ; //CHANGE// Changed 12/9
           } else if ( colNo === 5 ) {
-            $scope.sortField = "gender" ; //CHANGE// Changed 12/9
+              $scope.sortField = "gender" ; //CHANGE// Changed 12/9
+          } else if ( colNo === 6 ) {
+              $scope.sortField = "age"; //CHANGE// Changed 12/9
           }
           // save the sort paramesters for the next click
           lastSortDescending = $scope.sortDescending ;
@@ -113,19 +113,21 @@
 
   <!-- page head and version information -->
   <h2 id="maintitle">91.461 Assignment No. {{assnNo}} </h2>
-  <p>Program Version 1.0, updated December 8, 2014 at 10:48 AM</p>
+  <!--<p>Program Version 1.0, updated December 8, 2014 at 10:48 AM</p>-->
+  <!--Added search bar and check box in version 2.0 -->
+  <p> Program Version 2.0, updated December 9, 2014 at 7:58 PM </p> 
   Search a name here:<input ng-model="search1" type="text"/> <br>
   Check the check box if you want to hide the gender column:<input ng-model="box1" type="checkbox"/>
   <!-- directions -->
   <p><em>Click either green header row cell to sort the list.</em></p>
 
-    <!-- 
-      show number of records in the JSON data
-        http://stackoverflow.com/questions/19956074/how-can-i-show-a-count-of-rows-from-an-ng-repeat
-      show date and time
-        http://stackoverflow.com/questions/22962468/angularjs-display-current-date
-        https://docs.angularjs.org/api/ng/filter/date 
-    -->
+  <!-- 
+    show number of records in the JSON data
+    http://stackoverflow.com/questions/19956074/how-can-i-show-a-count-of-rows-from-an-ng-repeat
+    show date and time
+    http://stackoverflow.com/questions/22962468/angularjs-display-current-date
+    https://docs.angularjs.org/api/ng/filter/date 
+  -->
     
     <!-- the table controlled by the AngularJS controller -->
     <table id="tblSubmissions">
@@ -137,6 +139,7 @@
           <th ng-click="sortColumn(3)">Balance</th>
           <th ng-click="sortColumn(4)">Company</th> 
           <th ng-click="sortColumn(5)">Gender </th> 
+          <th ng-click="sortColumn(6)">Age </th>
         </tr>
       </thead>
       <!-- 
@@ -151,9 +154,10 @@
           
           <!--Table data -->
           <td>{{oneSubmit.name}}</td> <!--CHANGE ACCORDING TO VARIABLES IN JSON VAR, MAKE FOR EACH ONE --> <!--Change 12/9-->
-          <td>{{oneSubmit.balance}}</td> <!--Change 12/9-->
-          <td>{{oneSubmit.company}}</td> <!--Change 12/9-->
-          <td>{{oneSubmit.gender}}</td>  <!--Change 12/9-->
+          <td>{{oneSubmit.balance}}</td> <!--Changed 12/9-->
+          <td>{{oneSubmit.company}}</td> <!--Changed 12/9-->
+          <td>{{oneSubmit.gender}}</td>  <!--Changed 12/9-->
+          <td>{{oneSubmit.age}}</td>  <!--Changed 12/9-->
         </tr>
       </tbody>
     </table>
