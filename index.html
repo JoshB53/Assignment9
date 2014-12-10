@@ -120,8 +120,9 @@
   <!--<p>Program Version 1.0, updated December 8, 2014 at 10:48 AM</p>-->
   <!--Added search bar and check box in version 2.0 -->
   <p> Program Version 2.0, updated December 9, 2014 at 7:58 PM </p> 
-  Search a name here:<input ng-model="search1" type="text"/> <br>
-  Check the check box if you want to hide the gender column:<input ng-model="box1" type="checkbox"/>
+  Search any value from the table here:<input ng-model="search1" type="text"/> <br>
+  <!--Could not figure out how to properly implement the checkbox below -->
+  <!--Check the check box if you want to hide the gender column:<input ng-model="box1" type="checkbox"/>-->
   <!-- directions -->
   <p><em>Click either green header row cell to sort the list.</em></p>
 
@@ -151,6 +152,7 @@
         the ng-model attribute causes the data to be re-rendered when the jsonData changes
       -->
       <tbody ng-model="jsonData">
+        <!--filter:search1 implements the proper functionality for the search bar, which was much easier than expected. -->
         <tr ng-repeat="oneSubmit in jsonData.data | filter:search1 | orderBy : sortField : sortDescending">
           
           <!-- the built-in AngularJS loop index -->
